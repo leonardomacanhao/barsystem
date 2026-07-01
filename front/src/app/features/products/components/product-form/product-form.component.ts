@@ -7,7 +7,7 @@ import { ProductService } from '../../../../core/services/product.service';
 import { CategoryService } from '../../../../core/services/category.service';
 import { Category } from '../../../../shared/models/category.model';
 import { PageHeaderComponent } from '../../../../shared/components/page-header/page-header.component';
-import { environment } from '../../../../environments/environment';
+import { environment } from '../../../../../environments/environment';
 import { CardComponent } from '../../../../shared/components/card/card.component';
 
 @Component({

@@ -6,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ProductService } from '../../../../core/services/product.service';
 import { Product } from '../../../../shared/models/product.model';
 import { PageHeaderComponent } from '../../../../shared/components/page-header/page-header.component';
-import { environment } from '../../../../environments/environment';
+import { environment } from '../../../../../environments/environment';
 import { CardComponent } from '../../../../shared/components/card/card.component';
 import { EmptyStateComponent } from '../../../../shared/components/empty-state/empty-state.component';
 
