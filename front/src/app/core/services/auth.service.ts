@@ -4,12 +4,13 @@ import { isPlatformBrowser } from '@angular/common';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { jwtDecode } from 'jwt-decode';
 import { LoginRequest, LoginResponse, RegisterRequest, User } from '../../shared/models/user.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly apiUrl = 'http://localhost:5020/api/auth';
+  private readonly apiUrl = environment.apiUrl ? `${environment.apiUrl}/api/auth` : '/api/auth';
   private readonly tokenKey = 'auth_token';
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   private isBrowser: boolean;

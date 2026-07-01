@@ -7,6 +7,7 @@ import { ProductService } from '../../../../core/services/product.service';
 import { CategoryService } from '../../../../core/services/category.service';
 import { Category } from '../../../../shared/models/category.model';
 import { PageHeaderComponent } from '../../../../shared/components/page-header/page-header.component';
+import { environment } from '../../../../environments/environment';
 import { CardComponent } from '../../../../shared/components/card/card.component';
 
 @Component({
@@ -25,7 +26,7 @@ export class ProductFormComponent implements OnInit {
   productId?: string;
   selectedFile?: File;
   imagePreview?: string;
-  private readonly baseUrl = 'http://localhost:5020';
+  private readonly baseUrl = environment.apiUrl || '';
 
   constructor(
     private fb: FormBuilder,
@@ -100,13 +101,13 @@ export class ProductFormComponent implements OnInit {
     // Converte vírgula para ponto
     value = value.replace(',', '.');
     
-    // Remove pontos duplicados (mantém apenas o primeiro)
+    // Remove pontos duplicados
     const parts = value.split('.');
     if (parts.length > 2) {
       value = parts[0] + '.' + parts.slice(1).join('');
     }
     
-    // Remove zeros à esquerda (exceto se for "0." ou "0")
+    // Remove zeros à esquerda
     if (value.startsWith('0') && value.length > 1 && !value.startsWith('0.')) {
       value = value.replace(/^0+/, '') || '0';
     }
@@ -119,17 +120,11 @@ export class ProductFormComponent implements OnInit {
       }
     }
     
-    // Atualiza o valor no input
-    const cursorPosition = input.selectionStart || 0;
-    const oldValue = input.value;
+    // Atualiza o input
     input.value = value;
     
-    // Mantém a posição do cursor
-    const diff = value.length - oldValue.length;
-    input.setSelectionRange(cursorPosition + diff, cursorPosition + diff);
-    
-    // Atualiza o valor no form
-    const numericValue = parseFloat(value) || 0;
+    // Atualiza o form
+    const numericValue = parseFloat(value) || null;
     this.form.patchValue({ price: numericValue }, { emitEvent: false });
   }
 
@@ -137,8 +132,8 @@ export class ProductFormComponent implements OnInit {
     const value = this.form.get('price')?.value;
     if (value && value > 0) {
       // Formata com 2 casas decimais
-      const formatted = value.toFixed(2);
-      this.form.patchValue({ price: parseFloat(formatted) }, { emitEvent: false });
+      const formatted = parseFloat(value.toFixed(2));
+      this.form.patchValue({ price: formatted }, { emitEvent: false });
     }
   }
 

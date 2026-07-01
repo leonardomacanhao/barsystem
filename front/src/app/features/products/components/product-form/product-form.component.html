@@ -26,8 +26,8 @@
 
         <div class="form-group" style="flex: 1;">
           <label for="price">Preço <span class="required">*</span></label>
-          <div class="input-with-prefix">
-            <span class="prefix">R$</span>
+          <div class="price-input-group">
+            <span class="price-addon">R$</span>
             <input 
               type="text" 
               id="price"
@@ -36,7 +36,7 @@
               (blur)="onPriceBlur()"
               placeholder="0,00"
               [class.invalid]="form.get('price')?.touched && form.get('price')?.invalid"
-              class="with-prefix"
+              class="price-field"
               inputmode="decimal"
               autocomplete="off">
           </div>

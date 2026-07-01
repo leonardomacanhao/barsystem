@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ProductService } from '../../../../core/services/product.service';
 import { Product } from '../../../../shared/models/product.model';
 import { PageHeaderComponent } from '../../../../shared/components/page-header/page-header.component';
+import { environment } from '../../../../environments/environment';
 import { CardComponent } from '../../../../shared/components/card/card.component';
 import { EmptyStateComponent } from '../../../../shared/components/empty-state/empty-state.component';
 
@@ -27,7 +28,7 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
   filteredProducts: Product[] = [];
   searchTerm: string = '';
-  private readonly baseUrl = 'http://localhost:5020';
+  private readonly baseUrl = environment.apiUrl || '';
 
   constructor(
     private productService: ProductService,
