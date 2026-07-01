@@ -1,0 +1,160 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <div class="logo">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5 4.5 3 8 3H16C19.5 3 21 5 21 8.5Z" 
+                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.6947 13.7H15.7037M15.6947 16.7H15.7037M11.9955 13.7H12.0045M11.9955 16.7H12.0045M8.29431 13.7H8.30329M8.29431 16.7H8.30329" 
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1>Criar Conta</h1>
+      <p>Cadastre seu grupo e primeiro bar</p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="auth-form">
+      <div class="section-title">Dados do Grupo</div>
+
+      <div class="form-group">
+        <label for="groupName">Nome do Grupo</label>
+        <input 
+          type="text" 
+          id="groupName"
+          formControlName="groupName" 
+          placeholder="Ex: Rede de Bares XYZ"
+          [class.invalid]="registerForm.get('groupName')?.touched && registerForm.get('groupName')?.invalid">
+        <div class="error" *ngIf="registerForm.get('groupName')?.touched && registerForm.get('groupName')?.invalid">
+          <small *ngIf="registerForm.get('groupName')?.errors?.['required']">Nome é obrigatório</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="groupDescription">Descrição (opcional)</label>
+        <input 
+          type="text" 
+          id="groupDescription"
+          formControlName="groupDescription" 
+          placeholder="Breve descrição do grupo">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="groupContactEmail">Email de Contato</label>
+          <input 
+            type="email" 
+            id="groupContactEmail"
+            formControlName="groupContactEmail" 
+            placeholder="contato@grupo.com"
+            [class.invalid]="registerForm.get('groupContactEmail')?.touched && registerForm.get('groupContactEmail')?.invalid">
+          <div class="error" *ngIf="registerForm.get('groupContactEmail')?.touched && registerForm.get('groupContactEmail')?.invalid">
+            <small *ngIf="registerForm.get('groupContactEmail')?.errors?.['email']">Email inválido</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="groupContactPhone">Telefone</label>
+          <input 
+            type="tel" 
+            id="groupContactPhone"
+            formControlName="groupContactPhone" 
+            placeholder="(11) 99999-9999">
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+      <div class="section-title">Primeiro Bar</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstBarName">Nome do Bar</label>
+          <input 
+            type="text" 
+            id="firstBarName"
+            formControlName="firstBarName" 
+            placeholder="Ex: Bar Matriz"
+            [class.invalid]="registerForm.get('firstBarName')?.touched && registerForm.get('firstBarName')?.invalid">
+          <div class="error" *ngIf="registerForm.get('firstBarName')?.touched && registerForm.get('firstBarName')?.invalid">
+            <small *ngIf="registerForm.get('firstBarName')?.errors?.['required']">Nome é obrigatório</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="firstBarCnpj">CNPJ</label>
+          <input 
+            type="text" 
+            id="firstBarCnpj"
+            formControlName="firstBarCnpj" 
+            placeholder="00.000.000/0001-00"
+            [class.invalid]="registerForm.get('firstBarCnpj')?.touched && registerForm.get('firstBarCnpj')?.invalid">
+          <div class="error" *ngIf="registerForm.get('firstBarCnpj')?.touched && registerForm.get('firstBarCnpj')?.invalid">
+            <small *ngIf="registerForm.get('firstBarCnpj')?.errors?.['required']">CNPJ é obrigatório</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+      <div class="section-title">Administrador</div>
+
+      <div class="form-group">
+        <label for="adminName">Seu Nome</label>
+        <input 
+          type="text" 
+          id="adminName"
+          formControlName="adminName" 
+          placeholder="Nome completo"
+          [class.invalid]="registerForm.get('adminName')?.touched && registerForm.get('adminName')?.invalid">
+        <div class="error" *ngIf="registerForm.get('adminName')?.touched && registerForm.get('adminName')?.invalid">
+          <small *ngIf="registerForm.get('adminName')?.errors?.['required']">Nome é obrigatório</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="adminEmail">Seu Email</label>
+        <input 
+          type="email" 
+          id="adminEmail"
+          formControlName="adminEmail" 
+          placeholder="seu@email.com"
+          [class.invalid]="registerForm.get('adminEmail')?.touched && registerForm.get('adminEmail')?.invalid">
+        <div class="error" *ngIf="registerForm.get('adminEmail')?.touched && registerForm.get('adminEmail')?.invalid">
+          <small *ngIf="registerForm.get('adminEmail')?.errors?.['required']">Email é obrigatório</small>
+          <small *ngIf="registerForm.get('adminEmail')?.errors?.['email']">Email inválido</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="adminPassword">Senha</label>
+        <input 
+          type="password" 
+          id="adminPassword"
+          formControlName="adminPassword" 
+          placeholder="Mínimo 6 caracteres"
+          [class.invalid]="registerForm.get('adminPassword')?.touched && registerForm.get('adminPassword')?.invalid"
+          autocomplete="new-password">
+        <div class="error" *ngIf="registerForm.get('adminPassword')?.touched && registerForm.get('adminPassword')?.invalid">
+          <small *ngIf="registerForm.get('adminPassword')?.errors?.['required']">Senha é obrigatória</small>
+          <small *ngIf="registerForm.get('adminPassword')?.errors?.['minlength']">Mínimo 6 caracteres</small>
+        </div>
+      </div>
+
+      <button 
+        type="submit" 
+        class="btn-primary" 
+        [disabled]="loading || registerForm.invalid">
+        <span *ngIf="!loading">Criar Conta</span>
+        <span *ngIf="loading" class="loading">
+          <svg class="spinner" width="20" height="20" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" opacity="0.25"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+          Criando...
+        </span>
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      <p>Já tem uma conta? <a routerLink="/login">Faça login</a></p>
+    </div>
+  </div>
+</div>

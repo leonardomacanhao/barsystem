@@ -1,0 +1,65 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <div class="logo">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5 4.5 3 8 3H16C19.5 3 21 5 21 8.5Z" 
+                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.6947 13.7H15.7037M15.6947 16.7H15.7037M11.9955 13.7H12.0045M11.9955 16.7H12.0045M8.29431 13.7H8.30329M8.29431 16.7H8.30329" 
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1>BarSystem</h1>
+      <p>Sistema de Gestão para Bares</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="auth-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email"
+          formControlName="email" 
+          placeholder="seu@email.com"
+          [class.invalid]="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+          autocomplete="email">
+        <div class="error" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+          <small *ngIf="loginForm.get('email')?.errors?.['required']">Email é obrigatório</small>
+          <small *ngIf="loginForm.get('email')?.errors?.['email']">Email inválido</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input 
+          type="password" 
+          id="password"
+          formControlName="password" 
+          placeholder="Sua senha"
+          [class.invalid]="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+          autocomplete="current-password">
+        <div class="error" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+          <small *ngIf="loginForm.get('password')?.errors?.['required']">Senha é obrigatória</small>
+        </div>
+      </div>
+
+      <button 
+        type="submit" 
+        class="btn-primary" 
+        [disabled]="loading || loginForm.invalid">
+        <span *ngIf="!loading">Entrar</span>
+        <span *ngIf="loading" class="loading">
+          <svg class="spinner" width="20" height="20" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" opacity="0.25"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+          Entrando...
+        </span>
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      <p>Não tem uma conta? <a routerLink="/register">Registre-se</a></p>
+    </div>
+  </div>
+</div>
