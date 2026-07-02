@@ -24,27 +24,40 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 24px 20px;
+  padding: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.brand-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #ff9f0a 0%, #ff6723 100%);
+.brand-logo-container {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.brand-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .brand-name {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   color: #1d1d1f;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .sidebar-nav {
@@ -91,6 +104,15 @@
 .nav-item.active {
   background: rgba(0, 113, 227, 0.08);
   color: #0071e3;
+}
+
+.nav-item.active svg {
+  stroke: #0071e3;
+}
+
+.nav-item svg {
+  flex-shrink: 0;
+  stroke: #6e6e73;
 }
 
 .sidebar-footer {
@@ -172,7 +194,15 @@
 }
 
 @media (max-width: 768px) {
-  .sidebar { width: 100%; position: relative; height: auto; }
-  .main-content { margin-left: 0; }
-  .app-container { flex-direction: column; }
+  .sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  .app-container {
+    flex-direction: column;
+  }
 }

@@ -1,0 +1,24 @@
+<div class="page-header">
+  <div class="header-content">
+    <div class="header-info">
+      <h1 class="header-title">{{ title }}</h1>
+      <p *ngIf="subtitle" class="header-subtitle">{{ subtitle }}</p>
+    </div>
+
+    <div class="header-actions">
+      <ng-content></ng-content>
+      <a *ngIf="actionUrl && actionLabel" [routerLink]="actionUrl" 
+         class="action-btn" 
+         [class.primary]="actionType !== 'back'"
+         [class.secondary]="actionType === 'back'">
+        <svg *ngIf="actionType === 'back'" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <svg *ngIf="actionType !== 'back'" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+        {{ actionLabel }}
+      </a>
+    </div>
+  </div>
+</div>
