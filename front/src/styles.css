@@ -445,3 +445,158 @@ body.dark-theme .toast {
   background-color: var(--bg-secondary);
   color: var(--text-primary);
 }
+
+/* ===== MELHORIAS NO MODO ESCURO ===== */
+
+/* Botões de ação rápida mais visíveis */
+body.dark-theme .quick-actions .action-btn {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: var(--text-primary);
+}
+
+body.dark-theme .quick-actions .action-btn:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+body.dark-theme .quick-actions .action-btn svg {
+  stroke: #60a5fa;
+}
+
+body.dark-theme .quick-actions .action-btn:hover svg {
+  stroke: #93c5fd;
+}
+
+/* Melhorar legibilidade geral */
+body.dark-theme .stat-card,
+body.dark-theme .placeholder-card {
+  color: var(--text-primary);
+}
+
+body.dark-theme .stat-content h3,
+body.dark-theme .placeholder-card h3 {
+  color: var(--text-primary);
+}
+
+body.dark-theme .stat-content p,
+body.dark-theme .placeholder-card p {
+  color: var(--text-secondary);
+}
+
+body.dark-theme .stat-arrow svg {
+  stroke: var(--text-muted);
+}
+
+body.dark-theme .stat-card:hover .stat-arrow svg {
+  stroke: var(--text-primary);
+}
+
+/* Ícones dos cards */
+body.dark-theme .stat-icon {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+body.dark-theme .stat-icon svg {
+  stroke: #60a5fa;
+}
+
+/* Section headers */
+body.dark-theme .section-header h2 {
+  color: var(--text-primary);
+}
+
+body.dark-theme .section-header p {
+  color: var(--text-secondary);
+}
+
+/* Welcome banner - melhorar contraste */
+body.dark-theme .welcome-text h1 {
+  color: var(--text-primary);
+}
+
+body.dark-theme .welcome-subtitle {
+  color: var(--text-secondary);
+}
+
+body.dark-theme .badge-role {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+body.dark-theme .badge-role.admin {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+body.dark-theme .location {
+  color: var(--text-secondary);
+}
+
+body.dark-theme .location svg {
+  stroke: var(--text-muted);
+}
+
+body.dark-theme .date-card {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+body.dark-theme .date-day {
+  color: var(--text-primary);
+}
+
+body.dark-theme .date-month,
+body.dark-theme .date-weekday {
+  color: var(--text-secondary);
+}
+
+/* Forms e inputs */
+body.dark-theme label {
+  color: var(--text-primary);
+}
+
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+body.dark-theme input:focus,
+body.dark-theme textarea:focus,
+body.dark-theme select:focus {
+  border-color: var(--accent-color);
+  background-color: var(--bg-secondary);
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Botões primários */
+body.dark-theme .btn-primary {
+  background-color: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+body.dark-theme .btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* Links */
+body.dark-theme a {
+  color: var(--accent-color);
+}
+
+body.dark-theme a:hover {
+  color: var(--accent-hover);
+}
