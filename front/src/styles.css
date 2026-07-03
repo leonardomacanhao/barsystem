@@ -600,3 +600,144 @@ body.dark-theme a {
 body.dark-theme a:hover {
   color: var(--accent-hover);
 }
+
+/* ===== GARANTIR ZERO FONTE ESCURA NO MODO ESCURO ===== */
+body.dark-theme {
+  color: var(--text-primary);
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6,
+body.dark-theme p,
+body.dark-theme span,
+body.dark-theme label,
+body.dark-theme strong,
+body.dark-theme a,
+body.dark-theme li,
+body.dark-theme td,
+body.dark-theme th,
+body.dark-theme button,
+body.dark-theme .stat-content h3,
+body.dark-theme .stat-card h3,
+body.dark-theme .placeholder-card h3,
+body.dark-theme .welcome-text h1,
+body.dark-theme .section-header h2 {
+  color: var(--text-primary) !important;
+}
+
+body.dark-theme .subtitle,
+body.dark-theme .stat-content p,
+body.dark-theme .section-header p,
+body.dark-theme .badge-role,
+body.dark-theme .location,
+body.dark-theme .date-month,
+body.dark-theme .date-weekday,
+body.dark-theme .user-role {
+  color: var(--text-secondary) !important;
+}
+
+/* Ícones padrão claros */
+body.dark-theme .nav-item svg,
+body.dark-theme .stat-arrow svg,
+body.dark-theme .welcome-subtitle svg {
+  stroke: var(--text-secondary);
+}
+
+/* ===== FORÇAR TEXTO CLARO EM TODO O SISTEMA ===== */
+
+/* Reset geral de cores de texto */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6,
+body.dark-theme p,
+body.dark-theme span,
+body.dark-theme div,
+body.dark-theme a,
+body.dark-theme label,
+body.dark-theme strong,
+body.dark-theme small,
+body.dark-theme li,
+body.dark-theme th,
+body.dark-theme td {
+  color: var(--text-primary) !important;
+}
+
+/* Exceções para textos secundários */
+body.dark-theme .text-muted,
+body.dark-theme .subtitle,
+body.dark-theme .description,
+body.dark-theme .helper-text {
+  color: var(--text-secondary) !important;
+}
+
+/* Cards - forçar todos os textos claros */
+body.dark-theme .stat-card *,
+body.dark-theme .placeholder-card *,
+body.dark-theme .widget-card * {
+  color: var(--text-primary) !important;
+}
+
+body.dark-theme .stat-card p,
+body.dark-theme .placeholder-card p {
+  color: var(--text-secondary) !important;
+}
+
+/* Ações rápidas */
+body.dark-theme .action-btn,
+body.dark-theme .action-btn * {
+  color: var(--text-primary) !important;
+}
+
+body.dark-theme .action-btn span {
+  color: var(--text-secondary) !important;
+}
+
+/* Welcome banner */
+body.dark-theme .welcome-banner * {
+  color: var(--text-primary) !important;
+}
+
+body.dark-theme .welcome-subtitle,
+body.dark-theme .welcome-subtitle * {
+  color: var(--text-secondary) !important;
+}
+
+body.dark-theme .location,
+body.dark-theme .location * {
+  color: var(--text-secondary) !important;
+}
+
+/* Section headers */
+body.dark-theme .section-header * {
+  color: var(--text-primary) !important;
+}
+
+body.dark-theme .section-header p {
+  color: var(--text-secondary) !important;
+}
+
+/* Date card */
+body.dark-theme .date-card * {
+  color: var(--text-primary) !important;
+}
+
+body.dark-theme .date-month,
+body.dark-theme .date-weekday {
+  color: var(--text-secondary) !important;
+}
+
+/* Badges */
+body.dark-theme .badge-role {
+  color: #93c5fd !important;
+}
+
+body.dark-theme .badge-role.admin {
+  color: #fca5a5 !important;
+}
