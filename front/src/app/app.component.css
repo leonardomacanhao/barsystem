@@ -241,3 +241,17 @@ body.dark-theme .theme-toggle {
 body.dark-theme .theme-toggle:hover {
   background: #334155;
 }
+
+
+body.dark-theme .theme-toggle:hover svg {
+  stroke: #fcd34d !important;
+}
+
+/* Ícone da lua com linha escura */
+.theme-toggle svg[viewBox="0 0 24 24"] path {
+  stroke: #1f2937 !important;
+}
+
+body.dark-theme .theme-toggle svg[viewBox="0 0 24 24"] path {
+  stroke: #fbbf24 !important;
+}

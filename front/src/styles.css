@@ -741,3 +741,17 @@ body.dark-theme .badge-role {
 body.dark-theme .badge-role.admin {
   color: #fca5a5 !important;
 }
+
+/* ===== AJUSTAR HOVER DOS BOTÕES DE AÇÃO RÁPIDA NO MODO ESCURO ===== */
+body.dark-theme .quick-actions .action-btn:hover {
+  background: rgba(59, 130, 246, 0.18) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+body.dark-theme .quick-actions .action-btn:hover * {
+  color: var(--text-primary) !important;
+}
+
+body.dark-theme .quick-actions .action-btn:hover svg {
+  stroke: #60a5fa !important;
+}
